@@ -1,0 +1,13 @@
+.header {
+    display:flex;
+    flex-direction:row;
+    flex-wrap:nowrap;
+    width: 100%;
+    height: max-content;
+    justify-content:space-between;
+    margin: 3vw 0;
+    &__logo {
+        height: 4vw;
+        margin-left: 10%;
+    }
+}
