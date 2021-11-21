@@ -32,19 +32,48 @@
     }
     &__name {
         width: 100%;
-        font-size: 1.8vw;
+        font-size: 1.6vw;
         font-weight: 1000;
+        margin-bottom: 0.8vw;
     }
     &__location {
-        width: 100%
+        width: 100%;
+        font-size: 1.3vw;
     }
     &__tags {
-        width: 100%
+        width: 100%;
+        display:flex;
+        flex-direction:row;
+        &__tag {
+            background-color:#FF6060;
+            color:white;
+            margin-top: 1vw;
+            margin-right: 1vw;
+            padding: 0.5vw;
+            border-radius: 1vw;
+        }
     }
     &__rating {
-        width: 100%
+        width: 100%;
+        font-size: 2vw;
     }
     &__host {
-        width: 100%
+        width: 100%;
+        display:flex;
+        flex-direction:row;
+        justify-content: flex-end;
+        align-items:center;
+        margin-bottom: 1vw;
+        &__fullname {
+            font-size: 1.3vw;
+            line-height: 1.3vw;
+        }
+        &__picture {
+            border-radius: 50%;
+            height: 4vw;
+            width:4vw;
+            margin-left: 0.3vw;
+        }
     }
+    
 }

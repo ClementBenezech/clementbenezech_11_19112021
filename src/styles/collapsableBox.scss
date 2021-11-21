@@ -6,6 +6,7 @@
     border-radius: 0.3vw;
     overflow:hidden;
     margin: 2vw 0;
+    position:relative;
     &__title {
         background-color: #FF6060;
         padding: 1vw;
@@ -19,5 +20,12 @@
         &--hidden {
             display:none;
         }
+    }
+    &__chevron {
+        color: black;
+        position: absolute;
+        top: 1vw;
+        right: 2vw;
+        color:white;
     }
 }

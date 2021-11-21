@@ -5,10 +5,9 @@ import '../styles/nav.scss';
 class Nav extends react.Component {
     render() {
       return (
-      
         <nav className = "nav">
-                  <Link className = "nav__link" to="/">Home</Link>
-                  <Link className = "nav__link" to="/a-propos">About</Link>
+                  <Link className = "nav__link" to="/">Accueil</Link>
+                  <Link className = "nav__link" to="/a-propos">A propos</Link>
         </nav>
       )
     }

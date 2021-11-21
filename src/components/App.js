@@ -32,59 +32,81 @@ class App extends React.Component {
   }
 
   componentDidUpdate() {
-    console.log(this.props.location)
   }
+
+  //Handling the cas where someone uses a direct link to a specific rental page.
+  //Since we arrived here from "nowhere", the component won't render since there is no current rental defined.
+  //So get the current URL and compare it with data we fetch from the fake API, find the right object
+  //And then set this value as a new current rental value in the state, so the component can render.
+  componentDidMount() {
+    // setting up a one second delay so the loader can be seen
+    setTimeout(() => {
+      // Fetching local file
+      fetch("http://localhost:3000/logements.json")
+      .then (response => response.json())
+      .then (response => {
+          const data = response;
+          //Alter the component state so it re-renders with the new values we got from the API
+          this.setState({accommodation : data.filter(element => window.location.href.includes(element.id) === true)[0]})
+  }, 1000)
+})
+}
 
   render () {
+    
+    if (this.state.accommodation === null) {
+      return null
+    } else {
     return (
-    <fragment>
-    <div className="App">
-    <Router>
-      <Routes>
-        <Route path="/fiche-logement/*" element = {
-          <fragment>
+        <fragment>
+        <div className="App">
+        <Router>
+          <Routes>
+            <Route path="/fiche-logement/*" element = {
+              <fragment>
+                  <Header/>
+                    <div className = "accommodation">
+                      <Carousel accommodation = {this.state.accommodation}/>
+                      <AccommodationDetails accommodation = {this.state.accommodation}/>
+                    </div>
+                  <Footer/>
+              </fragment>
+              }>
+            </Route>
+
+            <Route path="/a-propos" element = {
+            <fragment>
               <Header/>
-                <div className = "accommodation">
-                  <Carousel accommodation = {this.state.accommodation}/>
-                  <AccommodationDetails accommodation = {this.state.accommodation}/>
+                <div className = "about-us">
+                    <PictureBox key = "about" image = {aboutImage} width = "80%" height = "20vh" margin = " 0 10%"/>
+                    <CoreValues/>
                 </div>
               <Footer/>
-          </fragment>
-          }>
-        </Route>
+            </fragment>
+            }>
+            </Route>
 
-        <Route path="/a-propos" element = {
-        <fragment>
-          <Header/>
-            <div className = "about-us">
-                <PictureBox key = "about" image = {aboutImage} width = "80%" height = "20vh" margin = " 0 10%"/>
-                <CoreValues/>
-            </div>
-          <Footer/>
+            <Route path="/404" element = {<div className = "page-not-found"><PageNotFound/></div>}>
+            </Route>
+              
+            <Route path="/" element = {
+            <fragment>
+              <Header/>
+                <div className = "homepage">
+                    <PictureBox key = "home" image = {homeImage} width = "80%" height = "20vh" margin = " 0 10%" text = "Chez vous, partout et ailleurs."/>
+                    <ResultGrid setCurrentAccommodation = {this.setCurrentAccommodation}/>
+                </div>
+              <Footer/>
+            </fragment>
+            }>
+            </Route>
+          </Routes>
+          </Router>
+        </div>
         </fragment>
-        }>
-        </Route>
-
-        <Route path="/404" element = {<div className = "page-not-found"><PageNotFound/></div>}>
-        </Route>
-          
-        <Route path="/" element = {
-        <fragment>
-          <Header/>
-            <div className = "homepage">
-                <PictureBox key = "home" image = {homeImage} width = "80%" height = "20vh" margin = " 0 10%" text = "Chez vous, partout et ailleurs."/>
-                <ResultGrid setCurrentAccommodation = {this.setCurrentAccommodation}/>
-            </div>
-          <Footer/>
-        </fragment>
-        }>
-        </Route>
-      </Routes>
-      </Router>
-    </div>
-    </fragment>
     )
   }
+}
 }
 
 export default App;

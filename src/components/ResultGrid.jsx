@@ -44,7 +44,7 @@ class ResultGrid extends react.Component {
             // Render a Loading message
             return (
                 <div className = "result-grid">
-                Chargement des logements
+                    <i class="fas fa-stroopwafel fa-spin result-grid__loader"></i>
                 </div>
                 )
         }

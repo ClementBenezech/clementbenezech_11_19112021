@@ -13,6 +13,10 @@
     & a {
         text-decoration:none;
     }
+    &__loader {
+        font-size: 10vw;
+        color: #FF6060;
+    }
     &__card {
         width: 30%;
         margin:1vw;
@@ -43,14 +47,12 @@
         }
         &__name {
             width: 100%;
-            
             background: rgb(255,97,97);
             height: 2.5vw;
             padding: 0 1vw;
             box-sizing:border-box;
             line-height: 2.5vw;
-
-            
+            font-size: 0.8vw;
         }
         &__rating {
             position: absolute;
