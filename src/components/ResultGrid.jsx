@@ -32,7 +32,7 @@ class ResultGrid extends react.Component {
         if (this.state.resultSet !== null) {
             // Rendering current dataset elements to array
             const reactElementAccommodationArray = this.state.resultSet.map( accommodation => {
-                return <Thumb accommodation = {accommodation}/>
+                return <Thumb accommodation = {accommodation} setCurrentAccommodation = {this.props.setCurrentAccommodation}/>
             })
             // Rendering the result grid
             return (
@@ -44,7 +44,7 @@ class ResultGrid extends react.Component {
             // Render a Loading message
             return (
                 <div className = "result-grid">
-                Loading, please wait
+                Chargement des logements
                 </div>
                 )
         }

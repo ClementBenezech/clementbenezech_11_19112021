@@ -1,0 +1,38 @@
+.carousel {
+    width: 80%;
+    margin-left: 10%;
+    position: relative;
+    &__picture {
+        height: 50vh;
+        width: 100%;
+        object-fit:cover;
+        border-radius: 1vw;
+    }
+    &__nav-container {
+        display:flex; 
+        flex-direction:row;
+        justify-content: space-between;
+        position: absolute;
+        top: 20vh;
+        width: 100%;
+        font-size: 3vw;
+        &--hidden {
+            display:none;
+        }
+    }
+    &__nav-arrow {
+        margin: 0 3vw;
+    }
+    &__picture-count {
+        display:flex; 
+        flex-direction:row;
+        justify-content: center;
+        position: absolute;
+        bottom: 1vw;
+        width: 100%;
+        text-align:center;
+        font-size: 1vw;
+        color: white;
+
+    }
+}
