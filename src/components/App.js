@@ -87,17 +87,6 @@ class App extends React.Component {
             </fragment>
             }>
             </Route>
-
-            <Route path="/404" element = {
-                   <fragment>
-                   <Header/>
-                      
-                      <PageNotFound/>
-                      
-                      <Footer/>
-            </fragment>
-            }>
-            </Route>
               
             <Route path="/" element = {
             <fragment>
@@ -107,6 +96,17 @@ class App extends React.Component {
                     <ResultGrid setCurrentAccommodation = {this.setCurrentAccommodation}/>
                 </div>
               <Footer/>
+            </fragment>
+            }>
+            </Route>
+
+            <Route path="*" element = {
+                   <fragment>
+                   <Header/>
+                      
+                      <PageNotFound/>
+                      
+                      <Footer/>
             </fragment>
             }>
             </Route>

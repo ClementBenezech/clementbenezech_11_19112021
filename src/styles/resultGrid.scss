@@ -4,14 +4,14 @@
 .result-grid {
     height: max-content;
     width: 90%;
-    margin: 0% 5% 0% 5%;
+    margin: 0% 5% 5% 5%;
     display:flex;
     flex-direction:row;
     flex-wrap:wrap;
     justify-content: center;
     background-color: #F6F6F6;
     border-radius: 1vw;
-    padding: 3vw 1vw;
+    padding: 1vw 1vw;
     box-sizing: border-box;
     @include mobile-only {
         background:unset;
@@ -29,7 +29,7 @@
         }
     }
     &__card {
-        width: 30%;
+        width: 31%;
         margin:1vw;
         border-radius: 1vw;
         color: white;

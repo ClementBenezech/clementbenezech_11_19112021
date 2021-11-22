@@ -1,3 +1,6 @@
+@import "/src/styles/variables.scss";
+@import "/src/styles/mixins.scss";
+
 .carousel {
     width: 90%;
     margin-left: 5%;
@@ -7,6 +10,9 @@
         width: 100%;
         object-fit:cover;
         border-radius: 1vw;
+        @include mobile-only {
+            height: 35vh;
+        }
     }
     &__nav-container {
         display:flex; 
@@ -16,12 +22,18 @@
         top: 20vh;
         width: 100%;
         font-size: 3vw;
+        @include mobile-only {
+            top: 16vh;
+        }
         &--hidden {
             display:none;
         }
     }
     &__nav-arrow {
         margin: 0 3vw;
+        @include mobile-only {
+            height: 3.5vh;
+        }
     }
     &__picture-count {
         display:flex; 

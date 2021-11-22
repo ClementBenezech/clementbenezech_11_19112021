@@ -8,7 +8,7 @@ class PageNotFound extends react.Component {
         <div className = "page-not-found">
           <h1 className = "page-not-found__title">404</h1>
           <div className = "page-not-found__paragraph">Oups! La page que vous demandez n'existe pas!</div>
-          <Link className = "nav__link" to="/">Retourner sur la page d'accueil</Link>
+          <Link className = "page-not-found__link" to="/">Retourner sur la page d'accueil</Link>
         </div>
       )
     }

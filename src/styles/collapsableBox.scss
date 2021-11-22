@@ -13,6 +13,7 @@
     @include mobile-only {
         font-size: 4vw;
         border-radius: 0.5vh;
+        flex-basis: 100%;
     }
     &__title {
         background-color: #FF6060;

@@ -1,14 +1,30 @@
+@import "/src/styles/variables.scss";
+@import "/src/styles/mixins.scss";
+
 .page-not-found {
-    height: 53vh;
+    min-height: 70vh;
     color:#FF6060;
     &__title {
         font-size: 8vw;
+        @include mobile-only {
+            margin-top: 20vw;
+            font-size: 20vw;
+        }
     }
     &__paragraph {
         font-size: 2vw;
         margin: 2vw;
+        @include mobile-only {
+            margin-top: 10vw;
+            font-size: 6.5vw;
+            margin-bottom: 10vw;
+        }
     }
     &__link {
+        color:#FF6060;
+        @include mobile-only {
 
+            font-size: 4vw;
+        }
     }
 }
