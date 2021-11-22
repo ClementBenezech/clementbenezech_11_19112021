@@ -10,10 +10,11 @@ import CoreValues from './CoreValues';
 import homeImage from '../images/home.png';
 import aboutImage from '../images/about.png'
 import React from 'react';
+import { serverUrl } from '../constants/constants';
 import { getAccommodationData } from '../functions/getAccommodationData';
 
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Routes,
   Route,
 } from "react-router-dom";
@@ -44,7 +45,7 @@ class App extends React.Component {
     // setting up a one second delay so the loader can be seen
     setTimeout(() => {
       // Fetching local file
-      fetch("http://localhost:3000/logements.json")
+      fetch(serverUrl+"logements.json")
       .then (response => response.json())
       .then (response => {
           const data = response;

@@ -1,5 +1,6 @@
 import react from "react";
 import Thumb from "./Thumb";
+import { serverUrl } from "../constants/constants";
 
 
 class ResultGrid extends react.Component {
@@ -15,7 +16,7 @@ class ResultGrid extends react.Component {
         // setting up a one second delay so the loader can be seen
         setTimeout(() => {
             // Fetching local file
-            fetch("logements.json")
+            fetch(serverUrl+"/logements.json")
             .then (response => response.json())
             .then (response => {
                 const data = response;
