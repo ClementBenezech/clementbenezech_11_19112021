@@ -1,3 +1,6 @@
+@import "/src/styles/variables.scss";
+@import "/src/styles/mixins.scss";
+
 .collapsable-box {
     flex-basis: 45%;
     color:white;
@@ -7,16 +10,27 @@
     overflow:hidden;
     margin: 2vw 0;
     position:relative;
+    @include mobile-only {
+        font-size: 4vw;
+        border-radius: 0.5vh;
+    }
     &__title {
         background-color: #FF6060;
         padding: 0.5vw;
         border-radius: 0.3vw;
+        @include mobile-only {
+            border-radius: 0.5vh;
+        }
     }
     &__content {
         background-color: #F6F6F6;
         color: #FF6060;
         padding: 2vw 1vw;
         width:inherit;
+        box-sizing:border-box;
+        @include mobile-only {
+            padding: 5vw 2vw 15vw 2vw;
+        }
         &--hidden {
             display:none;
         }

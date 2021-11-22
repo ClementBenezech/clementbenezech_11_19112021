@@ -1,4 +1,12 @@
+@import "/src/styles/variables.scss";
+@import "/src/styles/mixins.scss";
+
 .core-values {
     width: 60%;
     margin-left:20%;
+    @include mobile-only {
+        width: 90%;
+        margin-left: 5%;
+        min-height: 56.9vh;
+    }
 }

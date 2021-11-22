@@ -80,7 +80,7 @@ class App extends React.Component {
             <fragment>
               <Header/>
                 <div className = "about-us">
-                    <PictureBox key = "about" image = {aboutImage} width = "80%" height = "20vh" margin = " 0 10%"/>
+                    <PictureBox key = "about" image = {aboutImage} width = "90%" height = "20vh" margin = " 0 5%"/>
                     <CoreValues/>
                 </div>
               <Footer/>
