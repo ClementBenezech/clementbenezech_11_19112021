@@ -1,14 +1,36 @@
+@import "/src/styles/variables.scss";
+@import "/src/styles/mixins.scss";
+
 .picture-box {
+    height: 16vw;
+    @include mobile-only {
+        height: 30vw;
+    }
+    box-sizing:border-box;
     &__image {
         object-fit:cover;
         border-radius: 1vw;
         filter: brightness(0.6);
+        height: 14vw;
+        @include mobile-only {
+            height: 30vw;
+        }
+
     }
     &__text {
         position: relative;
-        top: -7vw;
+        top: -8vw;
         color: white;
         font-weight: bold;
         font-size: 2vw;
+        @include mobile-only {
+            top: -25vw;
+            font-size: 6.5vw;
+            width: 64%;
+            margin-left: 10%;
+            text-align: left;
+            padding-left: 2vw;
+            padding-top: 1.5vw;
+        }
     }
 }

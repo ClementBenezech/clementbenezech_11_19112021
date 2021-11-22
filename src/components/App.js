@@ -10,6 +10,7 @@ import CoreValues from './CoreValues';
 import homeImage from '../images/home.png';
 import aboutImage from '../images/about.png'
 import React from 'react';
+import { getAccommodationData } from '../functions/getAccommodationData';
 
 import {
   BrowserRouter as Router,
@@ -39,6 +40,7 @@ class App extends React.Component {
   //So get the current URL and compare it with data we fetch from the fake API, find the right object
   //And then set this value as a new current rental value in the state, so the component can render.
   componentDidMount() {
+
     // setting up a one second delay so the loader can be seen
     setTimeout(() => {
       // Fetching local file
@@ -86,14 +88,22 @@ class App extends React.Component {
             }>
             </Route>
 
-            <Route path="/404" element = {<div className = "page-not-found"><PageNotFound/></div>}>
+            <Route path="/404" element = {
+                   <fragment>
+                   <Header/>
+                      
+                      <PageNotFound/>
+                      
+                      <Footer/>
+            </fragment>
+            }>
             </Route>
               
             <Route path="/" element = {
             <fragment>
               <Header/>
                 <div className = "homepage">
-                    <PictureBox key = "home" image = {homeImage} width = "80%" height = "20vh" margin = " 0 10%" text = "Chez vous, partout et ailleurs."/>
+                    <PictureBox key = "home" image = {homeImage} width = "90%" height = "20vh" margin = " 0 5%" text = "Chez vous, partout et ailleurs."/>
                     <ResultGrid setCurrentAccommodation = {this.setCurrentAccommodation}/>
                 </div>
               <Footer/>

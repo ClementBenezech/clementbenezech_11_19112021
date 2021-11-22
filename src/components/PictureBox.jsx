@@ -14,8 +14,8 @@ class PictureBox extends react.Component {
       }
     render() {
       return (
-      <div>
-            <img className = "picture-box__image" style = {{width : this.width, height : this.height, margin: this.margin}} src = {this.image}></img>
+      <div className = "picture-box">
+            <img className = "picture-box__image" style = {{width : this.width, margin: this.margin}} src = {this.image}></img>
             <div className = "picture-box__text">{this.text}</div>
       </div>      
       )
