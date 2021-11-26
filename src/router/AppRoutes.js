@@ -1,25 +1,31 @@
 import react from "react"
 import { Route, Router, Routes } from "react-router"
 
-import AccommodationDetails from './AccommodationDetails';
-import Header from './Header';
-import Footer from './Footer';
-import PageNotFound from './PageNotFound';
-import PictureBox from './PictureBox';
-import Carousel from './Carousel';
-import ResultGrid from './ResultGrid';
-import CoreValues from './CoreValues';
+import AccommodationDetails from '../components/AccommodationDetails';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import PageNotFound from '../components/PageNotFound';
+import PictureBox from '../components/PictureBox';
+import Carousel from '../components/Carousel';
+import ResultGrid from '../components/ResultGrid';
+import CoreValues from '../components/CoreValues';
 import homeImage from '../images/home.png';
 import aboutImage from '../images/about.png'
 
+import { HOMEPAGE } from "./constants/paths";
+import { ACCOMMODATION_PAGE } from "./constants/paths";
+import { ABOUT_US } from "./constants/paths";
+import { NOT_FOUND } from "./constants/paths";
+
+
 //For now we do this but later we'll set up a new Page Content component handling all this.
 //import PageContent from './PageContent
-import PageContent from "./PageContent";
+import PageContent from "../components/PageContent";
 
 const AppRoutes = (setCurrentAccommodation, accommodation) => {
     return (
         <Routes>
-            <Route path="/fiche-logement/*" element = {
+            <Route path={ACCOMMODATION_PAGE} element = {
                 <fragment>
                 <Header/>
                   <div className = "accommodation">
@@ -31,7 +37,7 @@ const AppRoutes = (setCurrentAccommodation, accommodation) => {
                 }>
             </Route>
 
-            <Route path="/a-propos" element = {
+            <Route path= {ABOUT_US} element = {
             <fragment>
             <Header/>
               <div className = "about-us">
@@ -43,7 +49,7 @@ const AppRoutes = (setCurrentAccommodation, accommodation) => {
             }>
             </Route>
                 
-            <Route exact path="/" element = {
+            <Route exact path={HOMEPAGE} element = {
             <fragment>
             <Header/>
               <div className = "homepage">
@@ -55,7 +61,7 @@ const AppRoutes = (setCurrentAccommodation, accommodation) => {
             }>
             </Route>
 
-            <Route path="*" element = {
+            <Route path= {NOT_FOUND} element = {
                     <fragment>
                     <Header/>
                     <PageNotFound/>

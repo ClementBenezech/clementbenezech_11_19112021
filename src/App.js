@@ -1,8 +1,8 @@
-import '../styles/App.css';
+import './styles/App.css';
 
 import React from 'react';
-import { serverUrl } from '../constants/constants';
-import AppRoutes from './AppRoutes';
+import { serverUrl } from './constants/constants';
+import AppRoutes from './router/AppRoutes';
 
 import {   HashRouter as Router } from "react-router-dom";
 
