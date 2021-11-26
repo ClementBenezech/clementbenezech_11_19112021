@@ -1,24 +1,10 @@
 import '../styles/App.css';
-import AccommodationDetails from './AccommodationDetails';
-import Header from './Header';
-import Footer from './Footer';
-import PageNotFound from './PageNotFound';
-import PictureBox from './PictureBox';
-import Carousel from './Carousel';
-import ResultGrid from './ResultGrid';
-import CoreValues from './CoreValues';
-import homeImage from '../images/home.png';
-import aboutImage from '../images/about.png'
+
 import React from 'react';
 import { serverUrl } from '../constants/constants';
-import { getAccommodationData } from '../functions/getAccommodationData';
+import AppRoutes from './AppRoutes';
 
-import {
-  HashRouter as Router,
-  Routes,
-  Route,
-} from "react-router-dom";
-import reactDom from 'react-dom';
+import {   HashRouter as Router } from "react-router-dom";
 
 
 class App extends React.Component {
@@ -63,56 +49,12 @@ class App extends React.Component {
     return (
         <fragment>
         <div className="App">
-        <Router>
-          <Routes>
-            <Route path="/fiche-logement/*" element = {
-              <fragment>
-                  <Header/>
-                    <div className = "accommodation">
-                      <Carousel accommodation = {this.state.accommodation}/>
-                      <AccommodationDetails accommodation = {this.state.accommodation}/>
-                    </div>
-                  <Footer/>
-              </fragment>
-              }>
-            </Route>
 
-            <Route path="/a-propos" element = {
-            <fragment>
-              <Header/>
-                <div className = "about-us">
-                    <PictureBox key = "about" image = {aboutImage} width = "90%" height = "20vh" margin = " 0 5%"/>
-                    <CoreValues/>
-                </div>
-              <Footer/>
-            </fragment>
-            }>
-            </Route>
-              
-            <Route path="/" element = {
-            <fragment>
-              <Header/>
-                <div className = "homepage">
-                    <PictureBox key = "home" image = {homeImage} width = "90%" height = "20vh" margin = " 0 5%" text = "Chez vous, partout et ailleurs."/>
-                    <ResultGrid setCurrentAccommodation = {this.setCurrentAccommodation}/>
-                </div>
-              <Footer/>
-            </fragment>
-            }>
-            </Route>
-
-            <Route path="*" element = {
-                   <fragment>
-                   <Header/>
-                      
-                      <PageNotFound/>
-                      
-                      <Footer/>
-            </fragment>
-            }>
-            </Route>
-          </Routes>
+          <Router>
+              {AppRoutes(this.setCurrentAccommodation, this.state.accommodation)}
           </Router>
+
+        
         </div>
         </fragment>
     )
