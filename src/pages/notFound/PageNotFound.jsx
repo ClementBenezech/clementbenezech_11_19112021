@@ -1,5 +1,5 @@
 import react from "react";
-import '../styles/pageNotFound.scss'
+import '../../styles/pageNotFound.scss'
 import { Link } from "react-router-dom";
 
 class PageNotFound extends react.Component {

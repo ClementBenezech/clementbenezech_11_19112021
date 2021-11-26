@@ -1,7 +1,7 @@
 import react from "react";
-import '../styles/carousel.scss'
-import chevronLeft from '../images/chevron-left.png'
-import chevronRight from '../images/chevron-right.png'
+import '../../styles/carousel.scss'
+import chevronLeft from '../../images/chevron-left.png'
+import chevronRight from '../../images/chevron-right.png'
 
 class Carousel extends react.Component {
     constructor (props) {

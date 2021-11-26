@@ -1,14 +1,17 @@
-import react from "react"
-import { Route, Router, Routes } from "react-router"
+import { Route, Routes } from "react-router"
 
-import AccommodationDetails from '../components/AccommodationDetails';
+import AccommodationDetails from '../pages/accommodation/AccommodationDetails';
+import Carousel from '../pages/accommodation/Carousel';
+import PageNotFound from '../pages/notFound/PageNotFound';
+import ResultGrid from '../pages/home/ResultGrid';
+import CoreValues from '../pages/aboutUs/CoreValues';
+
+
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import PageNotFound from '../components/PageNotFound';
 import PictureBox from '../components/PictureBox';
-import Carousel from '../components/Carousel';
-import ResultGrid from '../components/ResultGrid';
-import CoreValues from '../components/CoreValues';
+
+
 import homeImage from '../images/home.png';
 import aboutImage from '../images/about.png'
 
@@ -20,7 +23,7 @@ import { NOT_FOUND } from "./constants/paths";
 
 //For now we do this but later we'll set up a new Page Content component handling all this.
 //import PageContent from './PageContent
-import PageContent from "../components/PageContent";
+/*import PageContent from "../components/PageContent";*/
 
 const AppRoutes = (setCurrentAccommodation, accommodation) => {
     return (

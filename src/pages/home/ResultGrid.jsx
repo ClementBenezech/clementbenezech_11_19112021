@@ -1,6 +1,6 @@
 import react from "react";
+import { serverUrl } from "../../constants/constants";
 import Thumb from "./Thumb";
-import { serverUrl } from "../constants/constants";
 
 
 class ResultGrid extends react.Component {

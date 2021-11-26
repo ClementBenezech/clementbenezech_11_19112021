@@ -1,6 +1,6 @@
 import react from "react";
-import CollapsableBox from "./CollapsableBox";
-import '../styles/coreValues.scss'
+import CollapsableBox from "../../components/CollapsableBox";
+import '../../styles/coreValues.scss'
 
 class CoreValues extends react.Component {
     render() {

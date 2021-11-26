@@ -1,6 +1,6 @@
 import react from "react";
-import "../styles/accommodationDetails.scss"
-import CollapsableBox from "./CollapsableBox";
+import "../../styles/accommodationDetails.scss"
+import CollapsableBox from "../../components/CollapsableBox";
 
 class AccommodationDetails extends react.Component {
     constructor (props) {
@@ -52,7 +52,7 @@ class AccommodationDetails extends react.Component {
                     <div>{splitFullName[0]}</div>
                     <div>{splitFullName[1]}</div>
                 </div>
-                <img className = "accommodation-details__host__picture" src = {this.data.host.picture}/>
+                <img className = "accommodation-details__host__picture" src = {this.data.host.picture} alt = {this.data.host.name}/>
               </div>
               <div className = "accommodation-details__rating">{starsReactElement}</div>
           </div>

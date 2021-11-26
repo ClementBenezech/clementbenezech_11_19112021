@@ -1,5 +1,5 @@
 import react from "react";
-import "../styles/resultGrid.scss"
+import "../../styles/resultGrid.scss"
 import { Link } from "react-router-dom";
 
 class Thumb extends react.Component {
