@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router"
+import { Route, Switch } from "react-router-dom"
 
 import AccommodationDetails from '../pages/accommodation/AccommodationDetails';
 import Carousel from '../pages/accommodation/Carousel';
@@ -23,48 +23,47 @@ import PageContent from "../components/PageContent";
 
 const AppRoutes = (setCurrentAccommodation, accommodation) => {
     return (
-            <Routes>
-                  <Route path={ACCOMMODATION_PAGE} element = {
-                      <PageContent>
-                        <div className = "accommodation">
-                          <Carousel accommodation = {accommodation}/>
-                          <AccommodationDetails accommodation = {accommodation}/>
-                        </div>
-                      </PageContent>
-                      }>
-                  </Route>
+            <Switch>
 
-                  <Route path= {ABOUT_US} element = {
+                  <Route path= {ABOUT_US}>
                       <PageContent>
                       <div className = "about-us">
                             <PictureBox key = "about" image = {aboutImage} width = "90%" height = "20vh" margin = " 0 5%"/>
                             <CoreValues/>
                       </div>
                       </PageContent>
-                  }>
-                  </Route>
-                
-                  <Route exact path={HOMEPAGE} element = {
+                  </Route>    
 
+                  <Route path={ACCOMMODATION_PAGE}>
                       <PageContent>
-                        <div className = "homepage">
-                          <PictureBox key = "home" image = {homeImage} width = "90%" height = "20vh" margin = " 0 5%" text = "Chez vous, partout et ailleurs."/>
-                          <ResultGrid setCurrentAccommodation = {setCurrentAccommodation}/>
+                        <div className = "accommodation">
+                          <Carousel accommodation = {accommodation}/>
+                          <AccommodationDetails accommodation = {accommodation}/>
                         </div>
                       </PageContent>
-                  }>
                   </Route>
 
-                  <Route path= {NOT_FOUND} element = {
+                  <Route exact path={HOMEPAGE}>
+                    <PageContent>
+                      <div className = "homepage">
+                        <PictureBox key = "home" image = {homeImage} width = "90%" height = "20vh" margin = " 0 5%" text = "Chez vous, partout et ailleurs."/>
+                        <ResultGrid setCurrentAccommodation = {setCurrentAccommodation}/>
+                      </div>
+                    </PageContent>
+                  </Route>
+
+                  <Route path = {NOT_FOUND}>
                     <PageContent>
                         <div className = "page-not-found">
                             <PageNotFound/>
                         </div>
                     </PageContent>
-
-                  }>
                   </Route>
-            </Routes>
+
+                 
+
+                       
+            </Switch>
     )
 }
             
