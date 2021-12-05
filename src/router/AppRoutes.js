@@ -30,7 +30,7 @@ const AppRoutes = (setCurrentAccommodation, accommodation) => {
             <Switch>
 
                   <Route path= {ABOUT_US}>
-                      <PageContent>
+                      <PageContent key = {ABOUT_US}>
                       <div className = "about-us">
                             <PictureBox key = "about" image = {aboutImage} width = "90%" height = "20vh" margin = " 0 5%"/>
                             <CoreValues/>
@@ -39,7 +39,7 @@ const AppRoutes = (setCurrentAccommodation, accommodation) => {
                   </Route>    
 
                   <Route path={ACCOMMODATION_PAGE}>
-                      <PageContent>
+                      <PageContent key={ACCOMMODATION_PAGE}>
                         <div className = "accommodation">
                           <Carousel accommodation = {accommodation}/>
                           <AccommodationDetails accommodation = {accommodation}/>
@@ -48,7 +48,7 @@ const AppRoutes = (setCurrentAccommodation, accommodation) => {
                   </Route>
 
                   <Route exact path={HOMEPAGE}>
-                    <PageContent>
+                    <PageContent key={HOMEPAGE}>
                       <div className = "homepage">
                         <PictureBox key = "home" image = {homeImage} width = "90%" height = "20vh" margin = " 0 5%" text = "Chez vous, partout et ailleurs."/>
                         <ResultGrid setCurrentAccommodation = {setCurrentAccommodation}/>
@@ -57,7 +57,7 @@ const AppRoutes = (setCurrentAccommodation, accommodation) => {
                   </Route>
 
                   <Route path = {NOT_FOUND}>
-                    <PageContent>
+                    <PageContent key = {NOT_FOUND}>
                         <div className = "page-not-found">
                             <PageNotFound/>
                         </div>

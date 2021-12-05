@@ -67,6 +67,7 @@ class App extends React.Component {
         }, 1000)
         })
     }
+
  
   //Rendering the current page only if a current accommodation is defined
   render () {
