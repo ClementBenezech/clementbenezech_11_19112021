@@ -1,6 +1,6 @@
 import React from 'react';
 
-//Importing StyleSheet
+//Importing StyleSheet for the app.
 import './styles/App.css'
 
 //Importing the URL of the server, defined in constants
@@ -10,12 +10,14 @@ import AppRoutes from './router/AppRoutes'
 // Importing withRouter. This will allow us to perform route updates using props.history.push()
 import {  withRouter } from "react-router-dom"
 
+// Importing necessary PATHS to be able to identify the current page, and redirect if needed.
 import { ACCOMMODATION_PAGE } from './router/constants/paths';
 import { NOT_FOUND } from './router/constants/paths';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
+    // Creating state value for current accommodation.
     this.state = {accommodation : null};
   }
 
@@ -65,8 +67,7 @@ class App extends React.Component {
         }, 1000)
         })
     }
-
-  
+ 
   //Rendering the current page only if a current accommodation is defined
   render () {
 
@@ -76,9 +77,7 @@ class App extends React.Component {
               return (
                   <fragment>
                       <div className="App">
-                        {/*<Router>*/}
-                            {AppRoutes(this.setCurrentAccommodation, this.state.accommodation)}
-                        {/*</Router>*/}                   
+                            {AppRoutes(this.setCurrentAccommodation, this.state.accommodation)}                
                       </div>
                   </fragment>
           )

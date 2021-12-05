@@ -5,7 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 // Importing the router
-import { BrowserRouter as Router, withRouter } from "react-router-dom"
+import { BrowserRouter as Router} from "react-router-dom"
 
 ReactDOM.render(
   <React.StrictMode>

@@ -1,3 +1,5 @@
+// Contain the paths definitions
+
 export const HOMEPAGE = "/"
 
 export const NOT_FOUND = "/*"
