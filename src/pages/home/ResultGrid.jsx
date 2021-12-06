@@ -29,7 +29,7 @@ class ResultGrid extends react.Component {
     // Rendering the component
     render() {
 
-        // Checking if there is some data in the componet state
+        // Checking if there is some data in the component state
         if (this.state.resultSet !== null) {
             // Rendering current dataset elements to array
             const reactElementAccommodationArray = this.state.resultSet.map( accommodation => {

@@ -40,6 +40,7 @@ class App extends React.Component {
                 .then (response => response.json())
                 .then (response => {
                     const data = response;
+                    console.log(data);
                     //Alter the component state so it re-renders with the new values we got from the API
                     //OR set state accommodation to undefined if there is no match (meaning we are on another page (about, not found, home))
 
