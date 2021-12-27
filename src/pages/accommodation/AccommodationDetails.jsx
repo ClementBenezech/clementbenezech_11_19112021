@@ -9,13 +9,15 @@ class AccommodationDetails extends react.Component {
     } 
     render() {
       // formatting equipments to render them in a collapsableBox
+      let equipmentId = 0;
       const equipmentsArray = this.data.equipments.map(equipment => {
-        return <div>{equipment}</div>
+        equipmentId++
+        return <div key = {equipmentId}>{equipment}</div>
       })
 
       //Formatting Tags to render them in the details.
       const tagsArray = this.data.tags.map(tag => {
-        return <div className = "accommodation-details__tags__tag">{tag}</div>
+        return <div key = {tag} className = "accommodation-details__tags__tag">{tag}</div>
       })
 
       //Creating an array of boolean values representing the rating stars based on the rating value in the json
@@ -29,11 +31,13 @@ class AccommodationDetails extends react.Component {
       }
 
       //Mapping previous array and returning the right star icon for each index
+      let starKey = 0;
       const starsReactElement = starsArray.map(star => {
+        starKey++
         if (star === true) {
-          return <i class="fas fa-star"></i>
+          return <i key = {starKey} className="fas fa-star"></i>
         } else {
-          return <i class="far fa-star"></i>
+          return <i key = {starKey} className="far fa-star"></i>
         }
       })
 
@@ -57,8 +61,8 @@ class AccommodationDetails extends react.Component {
               <div className = "accommodation-details__rating">{starsReactElement}</div>
           </div>
           <div className = "accommodation-details__detailed-information-container">
-            <CollapsableBox title = "Description" content = {this.data.description}/>
-            <CollapsableBox title = "Equipements" content = {equipmentsArray}/>
+            <CollapsableBox key = "description" title = "Description" content = {this.data.description}/>
+            <CollapsableBox key = "equipements" title = "Equipements" content = {equipmentsArray}/>
           </div>
         </div>
       )

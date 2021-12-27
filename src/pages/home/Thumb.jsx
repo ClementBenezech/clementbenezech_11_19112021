@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 class Thumb extends react.Component {
     render() {
       return (
-        <Link   to={"/fiche-logement/"+ this.props.accommodation.id} 
+        <Link to={"/fiche-logement/"+ this.props.accommodation.id} 
                 className = "result-grid__card" 
                 onClick = { () => {
                     console.log("setting current accommodation to"+this.props.accommodation.id )

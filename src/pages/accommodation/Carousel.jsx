@@ -29,14 +29,15 @@ class Carousel extends react.Component {
         }
     }
 
-    // After updating the component, hide Nav arrows in case only one picture is available for the rental.
-    componentDidUpdate () {
+    // After Mounting the component, hide Nav arrows in case only one picture is available for the rental.
+    componentDidMount () {
         if (this.data.pictures.length === 1) {
             this.navRef.current.className = "carousel__nav-container--hidden"
         } else {
             this.navRef.current.className = "carousel__nav-container"
         }
     }
+
 
     render() { 
         if (this.data.pictures.length > 0) {

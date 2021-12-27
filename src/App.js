@@ -32,7 +32,6 @@ class App extends React.Component {
     //So we get the current URL and compare it with data we fetch from the fake API, find the right object
     //And then set this value as a new current rental value in the state, so the component can render.
     componentDidMount() {
-        console.log("this.componentDidMount")
         // setting up a one second delay so the loader can be seen
         setTimeout(() => {
           // Fetching local file
@@ -40,12 +39,10 @@ class App extends React.Component {
                 .then (response => response.json())
                 .then (response => {
                     const data = response;
-                    console.log(data);
-                    //Alter the component state so it re-renders with the new values we got from the API
+                    //Alter the component state so it re-renders with the new values we got from the API.
                     //OR set state accommodation to undefined if there is no match (meaning we are on another page (about, not found, home))
-
-                    //Getting accommodation matching the ID in the URL, or undefined if no match.  
-                    const urlAccommodation = data.filter(element => window.location.href === element.id)[0];
+                    //Getting accommodation matching the ID in the URL, or undefined if no match.
+                    const urlAccommodation = data.filter(element => window.location.href.includes(element.id))[0];
                     //Checking if the current URL is of type accommodation_page.
                     const currentPageIsAccommodation = window.location.href.includes(ACCOMMODATION_PAGE.replace(/[^a-zA-Z\- ]/g, ""))
                     // Then, if the current URL is of accommodation details type...
@@ -69,19 +66,23 @@ class App extends React.Component {
         })
     }
 
+
+    componentDidUpdate() {
+      console.log("component is updating")
+    }
+
  
   //Rendering the current page only if a current accommodation is defined
   render () {
 
           if (this.state.accommodation === null) {
+                  console.log("RENDERING EMPTY APP. NO ACCOMMODATION DATA DEFINED")
                   return null
           } else {
               return (
-                  <fragment>
                       <div className="App">
                             {AppRoutes(this.setCurrentAccommodation, this.state.accommodation)}                
                       </div>
-                  </fragment>
           )
         }
     }

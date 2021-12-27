@@ -18,13 +18,13 @@ class PageContent extends React.Component {
 
     render() {
         return (
-            <fragment>
+            <React.Fragment>
                         <Header/>
                             <div className = "accommodation">
                                     {this.children}
                             </div>
                         <Footer/>
-            </fragment>
+            </React.Fragment>
         )
     }
 }
